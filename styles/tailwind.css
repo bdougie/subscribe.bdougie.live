@@ -1,8 +1,8 @@
-@tailwind base;
+@tailwind preflight;
+@tailwind components;
+@tailwind utilities;
 
 .change {
   color: black;
 }
 
-@tailwind components;
-@tailwind utilities;
