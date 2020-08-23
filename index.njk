@@ -3,19 +3,25 @@
 {% block title %}It does work{% endblock %}
 
 {% block content %}
-  <div class="fixed inset-0 flex justify-center items-center">
-    <div>
-      <form class="w-full max-w-sm">
-        <div class="flex items-center border-b border-teal-500 py-2">
-          <input class="appearance-none bg-transparent border-none w-full text-gray-700 mr-3 py-1 px-2 leading-tight focus:outline-none" type="text" placeholder="Jane Doe" aria-label="Full name">
-          <button class="flex-shrink-0 bg-teal-500 hover:bg-teal-700 border-teal-500 hover:border-teal-700 text-sm border-4 text-white py-1 px-2 rounded" type="button">
-            Sign Up
-          </button>
-          <button class="flex-shrink-0 border-transparent border-4 text-teal-500 hover:text-teal-800 text-sm py-1 px-2 rounded" type="button">
-            Cancel
-          </button>
-        </div>
-      </form>
-    </div>
+  <div style="margin:auto" class="py-8 w-full max-w-md">
+    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <div class="mb-4">
+        <label class="block text-gray-700 text-s font-bold mb-2" for="email">
+          Subscribe to my Newsletter
+        </label>
+        <input class="shadow appearance-none border rounded w-full my-2 py-2 px-3
+        text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+        id="email" type="text" placeholder="email">
+      </div>
+      <div class="flex items-center justify-between">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+          Subscribe
+        </button>
+      </div>
+    </form>
+    <a target="_blank" href="https://twitter.com/bdougieYO" class="text-center text-gray-500 text-xs">
+      *Your personal information will never be shared with anyone and will only be
+      used for this newsletter.
+    </p>
   </div>
 {% endblock %}
