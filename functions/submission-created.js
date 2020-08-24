@@ -2,27 +2,6 @@ require('dotenv').config()
 const fetch = require('node-fetch')
 const { EMAIL_TOKEN } = process.env
 
-const processForm = form => {
-fetch('/', {
-    method: 'GET',
-  })
-  .then(() => {
-    form.innerHTML = `<div class="form--success">Almost there! Check your inbox for a confirmation e-mail.</div>`;
-  })
-  .catch(error => {
-    form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
-  })
-}
-
-const emailForm = document.querySelector('.email-form')
-
-if (emailForm) {
-  emailForm.addEventListener('submit', e => {
-    e.preventDefault();
-    processForm(emailForm);
-  })
-}
-
 exports.handler = async event => {
   const email = JSON.parse(event.body).payload.email
   console.log(`Received a submission: ${email}`)
