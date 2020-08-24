@@ -4,6 +4,7 @@ const { EMAIL_TOKEN } = process.env
 
 exports.handler = async event => {
   const email = JSON.parse(event.body).payload.email
+
   console.log(`Received a submission: ${email}`)
   return fetch('https://api.buttondown.email/v1/subscribers', {
     method: 'POST',
