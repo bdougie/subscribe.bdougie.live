@@ -3,8 +3,8 @@
 {% block title %}It does work{% endblock %}
 
 {% block content %}
-  <div style="margin:auto" class="email-form py-8 w-full max-w-xl">
-    <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+  <div style="margin:auto" class="py-8 w-full max-w-xl">
+    <form class="email-form bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
       <div hidden aria-hidden="true">
         <label>
           Don’t fill this out if you're human: 
@@ -34,3 +34,26 @@
     </p>
   </div>
 {% endblock %}
+
+const processForm = form => {
+  const data = new FormData(form)
+  data.append('form-name', 'newsletter');
+  fetch('/', {
+    method: 'POST',
+    body: data,
+  })
+  .then(() => {
+    form.innerHTML = `<div class="form--success">Almost there! Check your inbox for a confirmation e-mail.</div>`;
+  })
+  .catch(error => {
+    form.innerHTML = `<div class="form--error">Error: ${error}</div>`;
+  })
+}
+
+const emailForm = document.querySelector('.email-form')
+if (emailForm) {
+  emailForm.addEventListener('submit', e => {
+    e.preventDefault();
+    processForm(emailForm);
+  })
+}
