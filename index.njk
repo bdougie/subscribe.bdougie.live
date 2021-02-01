@@ -5,7 +5,14 @@
 {% block content %}
   <div id="form" style="margin:auto" class="py-8 w-full max-w-xl">
     {# action="/#form" #}
-    <form class="email-form bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" name="newsletter" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <form 
+     action="https://buttondown.email/api/emails/embed-subscribe/bdougie"
+     target="popupwindow"
+     onsubmit="window.open('https://buttondown.email/bdougie', 'popupwindow')"
+     class="email-form bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" 
+     name="newsletter" 
+     method="POST" 
+    >
       <div hidden aria-hidden="true">
         <label>
           Don’t fill this out if you're human: 
@@ -24,7 +31,7 @@
         placeholder="email" required>
       </div>
       <div class="flex items-center justify-between">
-        <button disabled type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
           Subscribe
         </button>
       </div>
